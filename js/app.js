@@ -40,8 +40,19 @@ const categoryContainer = document.getElementById('category-section');
     fetch(url)
      .then(response => response.json())
      .then(data => displayNewsCategory(data.data))
+     .catch(error =>console.log(error))
+    //  .then(data =>displayCountItems(data));
+
     
 }
+
+const displayCountItems = count =>{
+  const countItems =document.getElementById('count-items');
+    countItems.innerText = `
+    ${count.length}items found for this category`;
+}
+
+
 
 const displayNewsCategory = newses=>{
 
@@ -50,7 +61,7 @@ const displayNewsCategory = newses=>{
 
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
-console.log(newses.length);
+// console.log(newses.length);
 
 
           const noFoundMsg = document.getElementById('no-msg');
