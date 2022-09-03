@@ -159,6 +159,7 @@ const displayNewsDeatails =  news =>{
   const  newsDetails = document.getElementById('news-details');
   // console.log(news.details);
   newsDetails.innerHTML =`
+   <div>   <img class="container" src="${news[0].image_url ? news[0].image_url : 'no img found'}" > </div>
   <p> ${news[0].details ? news[0].details : 'no details'} </p>` ;
 
 }
