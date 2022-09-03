@@ -93,7 +93,7 @@ const displayNewsCategory = newses=>{
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title fw-bold">${news.title}</h5>
-              <p class="card-text">${news.details.slice(0,200)}</p>
+              <p class="card-text">${news.details.slice(0,200)}...</p>
 
               <div class="card-text  d-flex justify-content-between align-items-center  mt-5 pt-5">
 
