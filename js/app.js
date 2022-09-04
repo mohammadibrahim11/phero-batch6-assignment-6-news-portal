@@ -21,19 +21,16 @@ const categoryContainer = document.getElementById('category-section');
       <li class="list-group fw-bold"><a href="#" onclick="loadNews('${category.category_id}')" class="text-decoration-none"
       >${category.category_name}</a></li>`;    
       categoryContainer.appendChild(categoryList);
-   
+      
 }
 
 
 }
-
-
-
 
  
  
  const loadNews =(event)=>{
-  // console.log(event);
+  console.log(event);
   loadSpinner(true);
     const url = `
     https://openapi.programming-hero.com/api/news/category/${event}`
@@ -41,27 +38,26 @@ const categoryContainer = document.getElementById('category-section');
      .then(response => response.json())
      .then(data => displayNewsCategory(data.data))
      .catch(error =>console.log(error))
-    //  .then(data =>displayCountItems(data));
-
     
 }
 
 const displayCountItems = count =>{
+  
   const countItems =document.getElementById('count-items');
     countItems.innerText = `
-    ${count.length}items found for this category`;
+    '${count.length}'items found for category`;
+
+    
 }
+
 
 
 
 const displayNewsCategory = newses=>{
 
-         
- 
-
-    const newsContainer = document.getElementById('news-container');
+          const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
-// console.log(newses.length);
+console.log(newses.length);
 
 
           const noFoundMsg = document.getElementById('no-msg');
@@ -71,16 +67,10 @@ const displayNewsCategory = newses=>{
                 else{
                     noFoundMsg.classList.add('d-none')
                    };
-
-
-             
-
-               
-
     for(const news of newses){
         // console.log(news);
 
-
+          
 
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('card', 'mb-3' , 'w-75', 'm-auto' );
@@ -176,14 +166,10 @@ const loadSpinner =isLoading=>{
   
 }
 
-
-
-
-
-document.getElementById('')
 //  displayNewsDeatails()
 //  displayNewsCategory()
 
 
 newsCategoris();
-loadNews()
+displayCountItems('newses.length');
+loadNews('01')
