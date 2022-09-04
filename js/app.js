@@ -45,7 +45,7 @@ const displayCountItems = count =>{
   
   const countItems =document.getElementById('count-items');
     countItems.innerText = `
-    ${count}items found for this category`;
+   ${count} items found for this category `;
 
     
 }
@@ -53,8 +53,11 @@ const displayCountItems = count =>{
 
 
 
+
 const displayNewsCategory = newses=>{
   displayCountItems(newses.length);
+  
+  
           const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
 
