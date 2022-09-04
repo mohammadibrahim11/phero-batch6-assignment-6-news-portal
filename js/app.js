@@ -141,11 +141,11 @@ const loadNewsData =  Id =>{
    https://openapi.programming-hero.com/api/news/${Id}`
    fetch(url)
    .then(response => response.json())
-   .then(data => displayNewsDeatails(data.data))
+   .then(data => displayNewsDetails(data.data))
   // console.log('news')
 }
 
-const displayNewsDeatails =  news =>{
+const displayNewsDetails =  news =>{
   console.log(news);
 
   const modalTitle = document.getElementById('exampleModalLabel');
@@ -154,6 +154,8 @@ const displayNewsDeatails =  news =>{
   // console.log(news.details);
   newsDetails.innerHTML =`
    <div>   <img class="container" src="${news[0].image_url ? news[0].image_url : 'no img found'}" > </div>
+   <p> Author : ${news[0].author.name ? news[0].author.name : 'no author found' }
+   <p> Published Date : ${news[0].author.published_date ? news[0].author.published_date : 'no published date'}
   <p> ${news[0].details ? news[0].details : 'no details'} </p>` ;
 
 }
