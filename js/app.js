@@ -98,7 +98,7 @@ const displayNewsCategory = newses=>{
                      </div>
 
                          <div class="ps-2 ">
-                          <small class="text-muted fw-bold">${news.author.name}</small> <br>
+                          <small class="text-muted fw-bold">${news.author.name ? news.author.name : 'no name found'}</small> <br>
                         <small class="text-muted">${news.author.published_date}</small>
                        </div> 
                    
