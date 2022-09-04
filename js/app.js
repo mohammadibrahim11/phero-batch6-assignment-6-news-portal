@@ -30,7 +30,7 @@ const categoryContainer = document.getElementById('category-section');
  
  
  const loadNews =(event)=>{
-  console.log(event);
+  // console.log(event);
   loadSpinner(true);
     const url = `
     https://openapi.programming-hero.com/api/news/category/${event}`
@@ -45,7 +45,7 @@ const displayCountItems = count =>{
   
   const countItems =document.getElementById('count-items');
     countItems.innerText = `
-    '${count.length}'items found for category`;
+    ${count}items found for this category`;
 
     
 }
@@ -54,10 +54,11 @@ const displayCountItems = count =>{
 
 
 const displayNewsCategory = newses=>{
-
+  displayCountItems(newses.length);
           const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
-console.log(newses.length);
+
+    
 
 
           const noFoundMsg = document.getElementById('no-msg');
@@ -171,5 +172,4 @@ const loadSpinner =isLoading=>{
 
 
 newsCategoris();
-displayCountItems('newses.length');
 loadNews('01')
