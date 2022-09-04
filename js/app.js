@@ -156,6 +156,7 @@ const displayNewsDetails =  news =>{
    <div>   <img class="container" src="${news[0].image_url ? news[0].image_url : 'no img found'}" > </div>
    <p> Author : ${news[0].author.name ? news[0].author.name : 'no author found' }
    <p> Published Date : ${news[0].author.published_date ? news[0].author.published_date : 'no published date'}
+   <p> Total View : ${news[0].total_view ? news[0].total_view : 'no views'}
   <p> ${news[0].details ? news[0].details : 'no details'} </p>` ;
 
 }
